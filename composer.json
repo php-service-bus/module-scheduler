@@ -39,7 +39,7 @@
     "php-service-bus/scheduler": "v3.0.x-dev"
   },
   "require-dev": {
-    "phpunit/phpunit": "^7",
+    "phpunit/phpunit": "^8",
     "vimeo/psalm": "^v3",
     "doctrine/dbal": "^v2.6",
     "symfony/dependency-injection": "^v4.2",
