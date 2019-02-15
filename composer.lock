@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a8459a8bcf92318a2a3577a5e8a1aff6",
-    "content-hash": "8188ecf12d550dd19ed394a91886ecf4",
+    "hash": "31e30d3fbbd09253dc438935e35f13d0",
+    "content-hash": "2c9dabd6aa863ba0b8ec18e3e9b613fe",
     "packages": [
         {
             "name": "amphp/amp",
@@ -236,16 +236,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-service-bus/scheduler.git",
-                "reference": "8e6f68cebccf8213add029d847a693ad9404a152"
+                "reference": "49daa234ae97c9ac6ca9fa52ab100501c3120bff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-service-bus/scheduler/zipball/8e6f68cebccf8213add029d847a693ad9404a152",
-                "reference": "8e6f68cebccf8213add029d847a693ad9404a152",
+                "url": "https://api.github.com/repos/php-service-bus/scheduler/zipball/49daa234ae97c9ac6ca9fa52ab100501c3120bff",
+                "reference": "49daa234ae97c9ac6ca9fa52ab100501c3120bff",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "^2",
+                "ext-bcmath": "*",
                 "php": ">=7.2",
                 "php-service-bus/common": "^v3.0",
                 "php-service-bus/storage-common": "^v3.0"
@@ -253,7 +254,7 @@
             "require-dev": {
                 "doctrine/dbal": "^v2.6",
                 "php-service-bus/storage-sql": "^v3.0",
-                "phpunit/phpunit": "^7",
+                "phpunit/phpunit": "^8",
                 "vimeo/psalm": "^v3"
             },
             "type": "library",
@@ -280,7 +281,7 @@
                 "command-bus",
                 "messaging"
             ],
-            "time": "2019-02-14 14:28:00"
+            "time": "2019-02-15 13:20:47"
         },
         {
             "name": "php-service-bus/storage-common",
@@ -3399,9 +3400,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "php-service-bus/scheduler": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

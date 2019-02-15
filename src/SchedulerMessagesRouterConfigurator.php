@@ -15,14 +15,10 @@ namespace ServiceBus\Scheduler\Module;
 use ServiceBus\MessagesRouter\Exceptions\MessageRouterConfigurationFailed;
 use ServiceBus\MessagesRouter\Router;
 use ServiceBus\MessagesRouter\RouterConfigurator;
-use /** @noinspection PhpInternalEntityUsedInspection */
-    ServiceBus\Scheduler\Contract\EmitSchedulerOperation;
-use /** @noinspection PhpInternalEntityUsedInspection */
-    ServiceBus\Scheduler\Contract\OperationScheduled;
-use /** @noinspection PhpInternalEntityUsedInspection */
-    ServiceBus\Scheduler\Contract\SchedulerOperationCanceled;
-use /** @noinspection PhpInternalEntityUsedInspection */
-    ServiceBus\Scheduler\Contract\SchedulerOperationEmitted;
+use ServiceBus\Scheduler\Contract\EmitSchedulerOperation;
+use ServiceBus\Scheduler\Contract\OperationScheduled;
+use ServiceBus\Scheduler\Contract\SchedulerOperationCanceled;
+use ServiceBus\Scheduler\Contract\SchedulerOperationEmitted;
 use ServiceBus\Scheduler\Emitter\SchedulerEmitter;
 use ServiceBus\Scheduler\Processor\SchedulerMessagesProcessor;
 
@@ -53,7 +49,6 @@ final class SchedulerMessagesRouterConfigurator implements RouterConfigurator
         {
             $processor = new SchedulerMessagesProcessor($this->emitter);
 
-            /** @noinspection PhpInternalEntityUsedInspection */
             $listenEvents = [
                 SchedulerOperationEmitted::class,
                 SchedulerOperationCanceled::class,
@@ -65,7 +60,6 @@ final class SchedulerMessagesRouterConfigurator implements RouterConfigurator
                 $router->registerListener($event, $processor);
             }
 
-            /** @noinspection PhpInternalEntityUsedInspection */
             $router->registerHandler(EmitSchedulerOperation::class, $processor);
 
         }
