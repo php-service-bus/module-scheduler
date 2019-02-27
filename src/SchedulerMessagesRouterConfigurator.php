@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Scheduler implementation module
+ * Scheduler implementation module.
  *
  * @author  Maksim Masiukevich <dev@async-php.com>
  * @license MIT
@@ -41,7 +41,7 @@ final class SchedulerMessagesRouterConfigurator implements RouterConfigurator
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function configure(Router $router): void
     {
@@ -52,18 +52,17 @@ final class SchedulerMessagesRouterConfigurator implements RouterConfigurator
             $listenEvents = [
                 SchedulerOperationEmitted::class,
                 SchedulerOperationCanceled::class,
-                OperationScheduled::class
+                OperationScheduled::class,
             ];
 
-            foreach($listenEvents as $event)
+            foreach ($listenEvents as $event)
             {
                 $router->registerListener($event, $processor);
             }
 
             $router->registerHandler(EmitSchedulerOperation::class, $processor);
-
         }
-        catch(\Throwable $throwable)
+        catch (\Throwable $throwable)
         {
             throw new MessageRouterConfigurationFailed($throwable->getMessage(), (int) $throwable->getCode(), $throwable);
         }

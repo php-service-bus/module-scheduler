@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Scheduler implementation module
+ * Scheduler implementation module.
  *
  * @author  Maksim Masiukevich <dev@async-php.com>
  * @license MIT
@@ -61,7 +61,7 @@ final class SchedulerModule implements ServiceBusModule
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function boot(ContainerBuilder $containerBuilder): void
     {
@@ -82,16 +82,18 @@ final class SchedulerModule implements ServiceBusModule
     /**
      * @param ContainerBuilder $containerBuilder
      *
+     * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
+     *
      * @return Definition
      *
-     * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
      */
     private function getRouterConfiguratorDefinition(ContainerBuilder $containerBuilder): Definition
     {
-        if(false === $containerBuilder->hasDefinition(ChainRouterConfigurator::class))
+        if (false === $containerBuilder->hasDefinition(ChainRouterConfigurator::class))
         {
-            $containerBuilder->addDefinitions([
-                    ChainRouterConfigurator::class => new Definition(ChainRouterConfigurator::class)
+            $containerBuilder->addDefinitions(
+                [
+                    ChainRouterConfigurator::class => new Definition(ChainRouterConfigurator::class),
                 ]
             );
         }
@@ -99,7 +101,7 @@ final class SchedulerModule implements ServiceBusModule
         /** @noinspection PhpUnhandledExceptionInspection */
         $routerConfiguratorDefinition = $containerBuilder->getDefinition(ChainRouterConfigurator::class);
 
-        if(false === $containerBuilder->hasDefinition(Router::class))
+        if (false === $containerBuilder->hasDefinition(Router::class))
         {
             $containerBuilder->addDefinitions([Router::class => new Definition(Router::class)]);
         }
@@ -118,24 +120,25 @@ final class SchedulerModule implements ServiceBusModule
     {
         $containerBuilder->addDefinitions([
             SchedulerMessagesRouterConfigurator::class => (new Definition(SchedulerMessagesRouterConfigurator::class))
-                ->setArguments([new Reference(SchedulerEmitter::class)])
+                ->setArguments([new Reference(SchedulerEmitter::class)]),
         ]);
     }
 
     /**
      * @param ContainerBuilder $containerBuilder
      *
+     * @throws \LogicException
+     *
      * @return void
      *
-     * @throws \LogicException
      */
     private function registerEmitter(ContainerBuilder $containerBuilder): void
     {
-        if(self::TYPE === $this->adapterType)
+        if (self::TYPE === $this->adapterType)
         {
             $containerBuilder->addDefinitions([
                 SchedulerEmitter::class => (new Definition(RabbitMQEmitter::class))
-                    ->setArguments([new Reference(SchedulerStore::class)])
+                    ->setArguments([new Reference(SchedulerStore::class)]),
             ]);
 
             return;
@@ -153,7 +156,7 @@ final class SchedulerModule implements ServiceBusModule
     {
         $containerBuilder->addDefinitions([
             SchedulerStore::class => (new Definition($this->storeImplementationServiceId))
-                ->setArguments([new Reference($this->databaseAdapterServiceId)])
+                ->setArguments([new Reference($this->databaseAdapterServiceId)]),
         ]);
     }
 
@@ -166,7 +169,7 @@ final class SchedulerModule implements ServiceBusModule
     {
         $containerBuilder->addDefinitions([
             SchedulerProvider::class => (new Definition(SchedulerProvider::class))
-                ->setArguments([new Reference(SchedulerStore::class)])
+                ->setArguments([new Reference(SchedulerStore::class)]),
         ]);
     }
 
@@ -179,8 +182,7 @@ final class SchedulerModule implements ServiceBusModule
         string $adapterType,
         string $storeImplementationServiceId,
         string $databaseAdapterServiceId
-    )
-    {
+    ) {
         $this->adapterType                  = $adapterType;
         $this->storeImplementationServiceId = $storeImplementationServiceId;
         $this->databaseAdapterServiceId     = $databaseAdapterServiceId;
