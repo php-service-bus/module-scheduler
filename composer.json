@@ -31,21 +31,21 @@
     }
   },
   "require": {
-    "php": ">=7.2",
+    "php": ">=7.3",
     "amphp/amp": "^2",
-    "php-service-bus/common": "^v3.2",
-    "php-service-bus/storage-common": "^v3.2",
-    "php-service-bus/messages-router":"^v3.2",
-    "php-service-bus/scheduler": "^v3.2"
+    "php-service-bus/common": "v3.3.*",
+    "php-service-bus/storage-common": "v3.3.*",
+    "php-service-bus/messages-router": "v3.3.*",
+    "php-service-bus/scheduler": "v3.3.*"
   },
   "require-dev": {
     "php-service-bus/code-style-config": "^v0.1",
-    "php-service-bus/storage-sql": "^v3.2",
+    "php-service-bus/storage-sql": "v3.3.*",
     "phpunit/phpunit": "^8",
     "vimeo/psalm": "^v3",
-    "phpstan/phpstan": "^0.11.5",
+    "phpstan/phpstan": "0.11.*",
     "doctrine/dbal": "^v2.6",
-    "symfony/dependency-injection": "^v4.2"
+    "symfony/dependency-injection": "v4.3.*"
   },
   "prefer-stable": true,
   "minimum-stability": "stable",
