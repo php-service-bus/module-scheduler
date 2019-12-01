@@ -31,26 +31,12 @@ final class SchedulerModule implements ServiceBusModule
 {
     private const TYPE = 'rabbitmq';
 
-    /**
-     * @var string
-     */
-    private $adapterType;
+    private string $adapterType;
 
-    /**
-     * @var string
-     */
-    private $storeImplementationServiceId;
+    private string $storeImplementationServiceId;
 
-    /**
-     * @var string
-     */
-    private $databaseAdapterServiceId;
+    private string $databaseAdapterServiceId;
 
-    /**
-     * @param string $databaseAdapterServiceId
-     *
-     * @return self
-     */
     public static function rabbitMqWithSqlStorage(string $databaseAdapterServiceId): self
     {
         return new self(
@@ -72,7 +58,6 @@ final class SchedulerModule implements ServiceBusModule
 
         $routerConfiguratorDefinition = $this->getRouterConfiguratorDefinition($containerBuilder);
 
-        /** @noinspection PhpUnhandledExceptionInspection */
         $routerConfiguratorDefinition->addMethodCall(
             'addConfigurator',
             [new Reference(SchedulerMessagesRouterConfigurator::class)]
@@ -80,12 +65,7 @@ final class SchedulerModule implements ServiceBusModule
     }
 
     /**
-     * @param ContainerBuilder $containerBuilder
-     *
      * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
-     *
-     * @return Definition
-     *
      */
     private function getRouterConfiguratorDefinition(ContainerBuilder $containerBuilder): Definition
     {
@@ -98,7 +78,6 @@ final class SchedulerModule implements ServiceBusModule
             );
         }
 
-        /** @noinspection PhpUnhandledExceptionInspection */
         $routerConfiguratorDefinition = $containerBuilder->getDefinition(ChainRouterConfigurator::class);
 
         if (false === $containerBuilder->hasDefinition(Router::class))
@@ -111,11 +90,6 @@ final class SchedulerModule implements ServiceBusModule
         return $routerConfiguratorDefinition;
     }
 
-    /**
-     * @param ContainerBuilder $containerBuilder
-     *
-     * @return void
-     */
     private function registerSchedulerMessagesRouterConfigurator(ContainerBuilder $containerBuilder): void
     {
         $containerBuilder->addDefinitions([
@@ -125,12 +99,7 @@ final class SchedulerModule implements ServiceBusModule
     }
 
     /**
-     * @param ContainerBuilder $containerBuilder
-     *
      * @throws \LogicException
-     *
-     * @return void
-     *
      */
     private function registerEmitter(ContainerBuilder $containerBuilder): void
     {
@@ -147,11 +116,6 @@ final class SchedulerModule implements ServiceBusModule
         throw new \LogicException('Wrong adapter type');
     }
 
-    /**
-     * @param ContainerBuilder $containerBuilder
-     *
-     * @return void
-     */
     private function registerSchedulerStore(ContainerBuilder $containerBuilder): void
     {
         $containerBuilder->addDefinitions([
@@ -160,11 +124,6 @@ final class SchedulerModule implements ServiceBusModule
         ]);
     }
 
-    /**
-     * @param ContainerBuilder $containerBuilder
-     *
-     * @return void
-     */
     private function registerSchedulerProvider(ContainerBuilder $containerBuilder): void
     {
         $containerBuilder->addDefinitions([
@@ -173,11 +132,6 @@ final class SchedulerModule implements ServiceBusModule
         ]);
     }
 
-    /**
-     * @param string $adapterType
-     * @param string $storeImplementationServiceId
-     * @param string $databaseAdapterServiceId
-     */
     private function __construct(
         string $adapterType,
         string $storeImplementationServiceId,
