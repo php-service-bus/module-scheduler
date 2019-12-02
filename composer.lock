@@ -130,25 +130,26 @@
         },
         {
             "name": "php-service-bus/common",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-service-bus/common.git",
-                "reference": "fa89465a0b4809af7dc94920dff8099c7752a8e3"
+                "reference": "ae3c1b3801039124c1ca2b5b278ad13a6f3e2801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-service-bus/common/zipball/fa89465a0b4809af7dc94920dff8099c7752a8e3",
-                "reference": "fa89465a0b4809af7dc94920dff8099c7752a8e3",
+                "url": "https://api.github.com/repos/php-service-bus/common/zipball/ae3c1b3801039124c1ca2b5b278ad13a6f3e2801",
+                "reference": "ae3c1b3801039124c1ca2b5b278ad13a6f3e2801",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "v2.4.*",
+                "ext-json": "*",
                 "php": ">=7.4",
                 "ramsey/uuid": "v3.8.*"
             },
             "require-dev": {
-                "php-service-bus/code-style-config": "v1.1.*",
+                "php-service-bus/code-style-config": "v1.2.*",
                 "phpstan/phpstan": "v0.11.*",
                 "phpunit/phpunit": "v8.4.*",
                 "symfony/dependency-injection": "v5.0.*",
@@ -181,20 +182,20 @@
                 "command-bus",
                 "messaging"
             ],
-            "time": "2019-11-29T20:46:17+00:00"
+            "time": "2019-12-02T14:33:55+00:00"
         },
         {
             "name": "php-service-bus/messages-router",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-service-bus/messages-router.git",
-                "reference": "7416741b2246fd9d247343517f21623b03264783"
+                "reference": "70a304a25daf3d60eb37c29ba2a5e4f3f4fd0eea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-service-bus/messages-router/zipball/7416741b2246fd9d247343517f21623b03264783",
-                "reference": "7416741b2246fd9d247343517f21623b03264783",
+                "url": "https://api.github.com/repos/php-service-bus/messages-router/zipball/70a304a25daf3d60eb37c29ba2a5e4f3f4fd0eea",
+                "reference": "70a304a25daf3d60eb37c29ba2a5e4f3f4fd0eea",
                 "shasum": ""
             },
             "require": {
@@ -202,7 +203,7 @@
                 "php-service-bus/common": "v4.0.*"
             },
             "require-dev": {
-                "php-service-bus/code-style-config": "v1.1.*",
+                "php-service-bus/code-style-config": "v1.2.*",
                 "phpstan/phpstan": "v0.11.*",
                 "phpunit/phpunit": "v8.4.*",
                 "symfony/dependency-injection": "v5.0.*",
@@ -232,20 +233,20 @@
                 "command-bus",
                 "messaging"
             ],
-            "time": "2019-11-29T23:30:33+00:00"
+            "time": "2019-12-02T17:54:20+00:00"
         },
         {
             "name": "php-service-bus/scheduler",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-service-bus/scheduler.git",
-                "reference": "b2b460a4ac94e7470f8b1fdb4cd21856306a4209"
+                "reference": "541ad63f6223b99521daab62fc2facbecd868292"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-service-bus/scheduler/zipball/b2b460a4ac94e7470f8b1fdb4cd21856306a4209",
-                "reference": "b2b460a4ac94e7470f8b1fdb4cd21856306a4209",
+                "url": "https://api.github.com/repos/php-service-bus/scheduler/zipball/541ad63f6223b99521daab62fc2facbecd868292",
+                "reference": "541ad63f6223b99521daab62fc2facbecd868292",
                 "shasum": ""
             },
             "require": {
@@ -257,7 +258,7 @@
             },
             "require-dev": {
                 "doctrine/dbal": "v2.10.*",
-                "php-service-bus/code-style-config": "v1.1.*",
+                "php-service-bus/code-style-config": "v1.2.*",
                 "php-service-bus/storage-sql": "v4.0.*",
                 "phpstan/phpstan": "v0.11.*",
                 "phpunit/phpunit": "v8.4.*",
@@ -287,20 +288,20 @@
                 "command-bus",
                 "messaging"
             ],
-            "time": "2019-11-30T22:26:25+00:00"
+            "time": "2019-12-02T18:52:10+00:00"
         },
         {
             "name": "php-service-bus/storage-common",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-service-bus/storage-common.git",
-                "reference": "da9208c496116b62f34c46036e6fffcf2d0a37fd"
+                "reference": "ab0b3096e9eb034b2acbc3e8788a7fbe70c0ccd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-service-bus/storage-common/zipball/da9208c496116b62f34c46036e6fffcf2d0a37fd",
-                "reference": "da9208c496116b62f34c46036e6fffcf2d0a37fd",
+                "url": "https://api.github.com/repos/php-service-bus/storage-common/zipball/ab0b3096e9eb034b2acbc3e8788a7fbe70c0ccd3",
+                "reference": "ab0b3096e9eb034b2acbc3e8788a7fbe70c0ccd3",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +309,7 @@
             },
             "require-dev": {
                 "amphp/amp": "v2.4.*",
-                "php-service-bus/code-style-config": "v1.1.*",
+                "php-service-bus/code-style-config": "v1.2.*",
                 "phpstan/phpstan": "v0.11.*",
                 "phpunit/phpunit": "v8.4.*",
                 "vimeo/psalm": "v3.7.*"
@@ -337,7 +338,7 @@
                 "command-bus",
                 "messaging"
             ],
-            "time": "2019-11-29T23:41:09+00:00"
+            "time": "2019-12-02T18:06:07+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -2473,16 +2474,16 @@
         },
         {
             "name": "php-service-bus/storage-sql",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-service-bus/storage-sql.git",
-                "reference": "be20af39b444f14ece4cc7f8a7485214c649327e"
+                "reference": "894039e66abdadee7cf230565f271946c94cea51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-service-bus/storage-sql/zipball/be20af39b444f14ece4cc7f8a7485214c649327e",
-                "reference": "be20af39b444f14ece4cc7f8a7485214c649327e",
+                "url": "https://api.github.com/repos/php-service-bus/storage-sql/zipball/894039e66abdadee7cf230565f271946c94cea51",
+                "reference": "894039e66abdadee7cf230565f271946c94cea51",
                 "shasum": ""
             },
             "require": {
@@ -2495,7 +2496,7 @@
             },
             "require-dev": {
                 "doctrine/dbal": "v2.10.*",
-                "php-service-bus/code-style-config": "v1.1.*",
+                "php-service-bus/code-style-config": "v1.2.*",
                 "phpstan/phpstan": "v0.11.*",
                 "phpunit/phpunit": "v8.4.*",
                 "vimeo/psalm": "v3.7.*"
@@ -2531,7 +2532,7 @@
                 "postgresql",
                 "sql"
             ],
-            "time": "2019-11-30T00:20:34+00:00"
+            "time": "2019-12-02T18:22:48+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -4774,16 +4775,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "3.7.0",
+            "version": "3.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "a154191922d14dcdde8ef348520a88d735d82304"
+                "reference": "8e6aa8a07d148dcedf58cccf32ce4b602b422035"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/a154191922d14dcdde8ef348520a88d735d82304",
-                "reference": "a154191922d14dcdde8ef348520a88d735d82304",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/8e6aa8a07d148dcedf58cccf32ce4b602b422035",
+                "reference": "8e6aa8a07d148dcedf58cccf32ce4b602b422035",
                 "shasum": ""
             },
             "require": {
@@ -4813,7 +4814,7 @@
                 "phpunit/phpunit": "^7.5 || ^8.0",
                 "psalm/plugin-phpunit": "^0.6",
                 "slevomat/coding-standard": "^5.0",
-                "squizlabs/php_codesniffer": "3.4.0",
+                "squizlabs/php_codesniffer": "^3.5",
                 "symfony/process": "^4.3"
             },
             "suggest": {
@@ -4858,7 +4859,7 @@
                 "inspection",
                 "php"
             ],
-            "time": "2019-11-27T14:18:47+00:00"
+            "time": "2019-12-02T05:11:45+00:00"
         },
         {
             "name": "webmozart/assert",
