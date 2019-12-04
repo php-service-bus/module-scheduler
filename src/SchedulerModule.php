@@ -31,11 +31,14 @@ final class SchedulerModule implements ServiceBusModule
 {
     private const TYPE = 'rabbitmq';
 
-    private string $adapterType;
+    /** @var string */
+    private $adapterType;
 
-    private string $storeImplementationServiceId;
+    /** @var string */
+    private $storeImplementationServiceId;
 
-    private string $databaseAdapterServiceId;
+    /** @var string */
+    private $databaseAdapterServiceId;
 
     public static function rabbitMqWithSqlStorage(string $databaseAdapterServiceId): self
     {

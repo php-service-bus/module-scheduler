@@ -27,7 +27,8 @@ use ServiceBus\Scheduler\Processor\SchedulerMessagesProcessor;
  */
 final class SchedulerMessagesRouterConfigurator implements RouterConfigurator
 {
-    private SchedulerEmitter $emitter;
+    /** @var SchedulerEmitter  */
+    private $emitter;
 
     public function __construct(SchedulerEmitter $emitter)
     {
